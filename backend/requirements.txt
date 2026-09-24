@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+docxtpl
+python-multipart
+sqlalchemy
+passlib==1.7.4
+bcrypt==4.0.1
+pyjwt
+email-validator
+pydantic[email]
+dotenv

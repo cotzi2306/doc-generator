@@ -1,0 +1,14 @@
+Notes.txt
+
+backend/.env
+backend/venv
+backend/saas.db
+
+# Caché de Python
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Base de datos local (si usas SQLite)
+*.db
+*.sqlite3

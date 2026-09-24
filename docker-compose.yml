@@ -1,0 +1,25 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: saas_backend
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./backend/.env  
+    volumes:
+      # Montamos la base de datos y plantillas para que no se pierdan al reiniciar el contenedor
+      - ./backend/saas.db:/app/saas.db
+      - ./backend/app/plantillas:/app/app/plantillas
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: saas_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
